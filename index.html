@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pong Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main Menu -->
+    <div id="mainMenu" class="menu-container">
+      <div class="menu-box">
+        <h1 class="menu-title">PONG GAME</h1>
+        <button id="playBtn" class="menu-btn">▶ PLAY</button>
+        <button id="settingBtn" class="menu-btn">⚙ SETTING</button>
+        <button id="soundBtn" class="menu-btn">🔊 SOUND</button>
+        <button id="themeBtn" class="menu-btn">🌙 THEME</button>
+      </div>
+    </div>
+
+    <!-- Difficulty Selection Menu -->
+    <div id="difficultyMenu" class="menu-container hidden">
+      <div class="menu-box">
+        <h1 class="menu-title">SELECT DIFFICULTY</h1>
+        <button id="easyBtn" class="difficulty-btn easy-btn">
+          <span class="difficulty-name">EASY</span>
+          <span class="difficulty-desc">Level 1-10</span>
+        </button>
+        <button id="mediumBtn" class="difficulty-btn medium-btn">
+          <span class="difficulty-name">MEDIUM</span>
+          <span class="difficulty-desc">Level 10-25</span>
+        </button>
+        <button id="hardBtn" class="difficulty-btn hard-btn">
+          <span class="difficulty-name">HARD</span>
+          <span class="difficulty-desc">Level 25-100</span>
+        </button>
+        <button id="backFromDifficultyBtn" class="menu-btn back-btn">← BACK</button>
+      </div>
+    </div>
+
+    <!-- Settings Menu -->
+    <div id="settingMenu" class="menu-container hidden">
+      <div class="menu-box">
+        <h1 class="menu-title">SETTINGS</h1>
+        <div class="setting-item">
+          <label>AI Difficulty:</label>
+          <div class="slider-container">
+            <input type="range" id="aiDifficultySlider" min="1" max="10" value="5" />
+            <span id="aiDifficultyValue">5</span>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label>Ball Speed:</label>
+          <div class="slider-container">
+            <input type="range" id="ballSpeedSlider" min="1" max="10" value="5" />
+            <span id="ballSpeedValue">5</span>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label>Paddle Speed:</label>
+          <div class="slider-container">
+            <input type="range" id="paddleSpeedSlider" min="1" max="10" value="5" />
+            <span id="paddleSpeedValue">5</span>
+          </div>
+        </div>
+        <button id="resetSettingsBtn" class="menu-btn">🔄 RESET</button>
+        <button id="backFromSettingBtn" class="menu-btn back-btn">← BACK</button>
+      </div>
+    </div>
+
+    <!-- Sound Menu -->
+    <div id="soundMenu" class="menu-container hidden">
+      <div class="menu-box">
+        <h1 class="menu-title">SOUND SETTINGS</h1>
+        <div class="setting-item">
+          <label>Master Volume:</label>
+          <div class="slider-container">
+            <input type="range" id="masterVolumeSlider" min="0" max="100" value="50" />
+            <span id="masterVolumeValue">50%</span>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label>Paddle Sound:</label>
+          <div class="toggle-switch">
+            <input type="checkbox" id="paddleSoundToggle" checked />
+            <span class="toggle-slider"></span>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label>Wall Sound:</label>
+          <div class="toggle-switch">
+            <input type="checkbox" id="wallSoundToggle" checked />
+            <span class="toggle-slider"></span>
+          </div>
+        </div>
+        <div class="setting-item">
+          <label>Score Sound:</label>
+          <div class="toggle-switch">
+            <input type="checkbox" id="scoreSoundToggle" checked />
+            <span class="toggle-slider"></span>
+          </div>
+        </div>
+        <button id="testSoundBtn" class="menu-btn">🔔 TEST SOUND</button>
+        <button id="backFromSoundBtn" class="menu-btn back-btn">← BACK</button>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="game-wrapper hidden">
+      <div class="scoreboard">
+        <div class="score-box">
+          <span class="label">Player</span>
+          <span id="playerScore">0</span>
+        </div>
+
+        <div class="score-box center">
+          <span class="label">Level</span>
+          <span id="levelDisplay">1</span>
+        </div>
+
+        <div class="score-box">
+          <span class="label">Computer</span>
+          <span id="computerScore">0</span>
+        </div>
+      </div>
+
+      <canvas id="gameCanvas" width="900" height="600" aria-label="Pong game"></canvas>
+      
+      <button id="pauseBtn" class="pause-btn">⏸ PAUSE</button>
+      <button id="menuBtn" class="menu-back-btn">≡ MENU</button>
+    </div>
+
+    <!-- Pause Screen -->
+    <div id="pauseScreen" class="menu-container hidden">
+      <div class="menu-box">
+        <h1 class="menu-title">PAUSED</h1>
+        <button id="resumeBtn" class="menu-btn">▶ RESUME</button>
+        <button id="backToMainMenuBtn" class="menu-btn">≡ MAIN MENU</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
