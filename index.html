@@ -11,10 +11,30 @@
     <div id="mainMenu" class="menu-container">
       <div class="menu-box">
         <h1 class="menu-title">PONG GAME</h1>
+        <div class="coin-display">
+          <span class="coin-icon">💰</span>
+          <span id="coinDisplay">0</span>
+        </div>
         <button id="playBtn" class="menu-btn">▶ PLAY</button>
+        <button id="shopBtn" class="menu-btn">🛒 SHOP</button>
         <button id="settingBtn" class="menu-btn">⚙ SETTING</button>
         <button id="soundBtn" class="menu-btn">🔊 SOUND</button>
         <button id="themeBtn" class="menu-btn">🌙 THEME</button>
+      </div>
+    </div>
+
+    <!-- Shop Menu -->
+    <div id="shopMenu" class="menu-container hidden">
+      <div class="menu-box">
+        <h1 class="menu-title">SHOP</h1>
+        <div class="coin-display">
+          <span class="coin-icon">💰</span>
+          <span id="shopCoinDisplay">0</span>
+        </div>
+        <div id="shopItems" class="shop-items">
+          <!-- Items akan được load từ JavaScript -->
+        </div>
+        <button id="backFromShopBtn" class="menu-btn back-btn">← BACK</button>
       </div>
     </div>
 
@@ -122,10 +142,23 @@
           <span class="label">Computer</span>
           <span id="computerScore">0</span>
         </div>
+
+        <div class="score-box">
+          <span class="label">Coins</span>
+          <span id="gameCoins">0</span>
+        </div>
       </div>
 
       <canvas id="gameCanvas" width="900" height="600" aria-label="Pong game"></canvas>
-      
+
+      <!-- Active Powers Display -->
+      <div id="activePowersDisplay" class="active-powers">
+      </div>
+
+      <!-- Power-ups Bar -->
+      <div id="powerupsBar" class="powerups-bar hidden">
+      </div>
+
       <button id="pauseBtn" class="pause-btn">⏸ PAUSE</button>
       <button id="menuBtn" class="menu-back-btn">≡ MENU</button>
     </div>
@@ -136,6 +169,25 @@
         <h1 class="menu-title">PAUSED</h1>
         <button id="resumeBtn" class="menu-btn">▶ RESUME</button>
         <button id="backToMainMenuBtn" class="menu-btn">≡ MAIN MENU</button>
+      </div>
+    </div>
+
+    <!-- Level Complete Screen -->
+    <div id="levelCompleteScreen" class="menu-container hidden">
+      <div class="menu-box">
+        <h1 class="menu-title">LEVEL COMPLETE!</h1>
+        <div class="level-stats">
+          <div class="stat">
+            <span>Coins Earned:</span>
+            <span id="coinsEarned" class="stat-value">0</span>
+          </div>
+          <div class="stat">
+            <span>Total Coins:</span>
+            <span id="totalCoinsAfter" class="stat-value">0</span>
+          </div>
+        </div>
+        <button id="continueBtn" class="menu-btn">→ NEXT LEVEL</button>
+        <button id="toMenuBtn" class="menu-btn">≡ MAIN MENU</button>
       </div>
     </div>
 
